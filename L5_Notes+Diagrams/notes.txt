@@ -1,0 +1,30 @@
+L5
+
+1. common fork join pool contains - (n - 1) daemon thread + 1 main thread
+
+Completable futures are nothing but a pipeline of task that can be done asynchronously similar to streams
+
+Analogy b/w streams and completable future
+
+1. Map — thenApply
+2. ForEach - thenAccept
+
+
+Localhost ~ 127.0.0.1
+
+Default port
+1. Mysql - 3306
+2. Postgres - 5432
+
+
+Analogy b/w mysql and Java data types
+1. Int — Int
+2. varchar — string
+3. Bool / tinyint — boolean
+
+
+An external library in java project is nothing but a dependency in maven projects
+
+Local repo - root/.m2/
+Central repo - https://repo.maven.apache.org/maven2/
+For better searching - https://mvnrepository.com/ (Not central repo)
