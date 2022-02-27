@@ -1,0 +1,76 @@
+L6
+
+Url = Base url + API endpoint
+
+
+https://www.google.com  + /complete/search (API)
+
+API — Application Program Interface —> A contract b/w the FE and BE to do any operation
+
+API Endpoint / Endpoint / Functionality
+
+Whenever you invoke an API from FE, it is nothing but a network call 
+
+API call is also known as request made by FE
+
+
+Functionalities for which APIs can be created
+1. Search       
+2. Locating
+3. Video searching
+4. Blogging
+
+
+Diff IP address and DNS ?
+
+IP address is the unique address given to a server / machine
+DNS - Domain name server is the public name mapped to that IP Address because it’s difficult to remember the IP address
+
+
+Request Headers: — Extra information sent in the API call / request
+Response headers — Extra information sent by the BE with the response for a given request
+
+
+Command to find the dependency tree:
+mvn dependency:tree -Includes=<groupid>:<artifactid>
+
+
+Precedence of embedded servers. Why ? HW
+1. Tomcat
+2. Jegtty
+3. Undertow
+
+
+Is there any other embedded server for spring boot ? HW
+
+Comparison b/w Spring web and Jax-rs
+      Spring web                   Jax-rs
+      GetMapping                   GET
+      RequestParam                 QueryParam
+      PathVariable                 PathParam
+
+HTTP Methods
+
+1. GET --> A method which is used to retrieve some response from the BE -- Safe method
+
+2. POST --> A method which is used to save/store some data on the BE    -- Unsafe method
+3. PUT --> A method which is used to update the details on BE           -- Unsafe method
+4. DELETE --> A method which is used to delete some data on the BE      -- Unsafe method
+5. PATCH, HEAD, OPTIONS
+
+
+HTTP Status code
+ 200 -- OK
+ 500 -- Internal server error
+ 401 -- Unauthorized / Unauthenticated - Invalid entity / user (Spring security)
+ 403 -- Forbidden access - Valid entity but the operation you are trying to do is forbidden (Spring security)
+ 404 -- Not found (Trying to access something which is not present as a resource / API in your server )
+ 405 -- HTTP method not allowed
+
+
+2 pillars of Spring Boot
+
+— Inversion of control (IOC)
+— Dependency injection
+
+
