@@ -1,0 +1,31 @@
+L7
+
+If the request attribute is not found in the reflection search done by the convertor, it will be ignored
+
+conversion from json object to a java object and vice versa is done by some spring-web utility
+
+
+Logging comparisons
+/**
+ * TRACE - 1000
+ * DEBUG - 300
+ * INFO - 100
+ * WARN - 10
+ * ERROR - 1
+ **/
+
+
+API designed
+/**
+ Hashmap - {employee.id, employee}
+
+ * Add a new employee --> input : employee object, output: void
+ * Get the details of a particular employee --> input: employee id, output: employee
+ * Get details of all the employees present --> input: <>, output: List<employee>
+ * Update details of an employee --> input: id, (details to be updated) , output: employee
+ * Delete the employee --> input: id, output : boolean | employee | void
+ **/
+
+Spring will create objects of all those classes which are annotated
+with @Component on top of it either directly or indirectly
+
