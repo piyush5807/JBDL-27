@@ -1,0 +1,38 @@
+L8
+
+Logging levels
+
+ERROR
+WARN
+INFO. — default one
+DEBUG
+TRACE
+
+
+For all the errors / exceptions - use WARN / ERROR
+
+Command to run spring boot application from terminal - 
+mvn clean package &&  java -jar -Dspring.profiles.active=<profile>  target/demo-beans-0.0.1-SNAPSHOT.jar
+
+Sample object present in IOC container
+demoConfig is com.example.jbdl.demobeans.DemoConfig$$EnhancerBySpringCGLIB$$8e3cbb44@5a580161
+
+
+IOC 
+1. Instead of you creating an object yourself, spring will be creating one for you
+2. but you need to notify spring for that by writing annotations or xml files
+3. After the object is created by spring, it will be stored in IOC container / Application context
+
+Bean Scopes
+/**
+ * For prototype beans, the object is initialized when it is required / autowired by some other beans
+ * For singleton beans, the object is created in the beginning itself irrespective of whether it is autowired or not
+ */
+
+By default the scope is singleton
+
+
+You can not have more than 1 same API
+Same API = Same endpoint + Same method
+
+
