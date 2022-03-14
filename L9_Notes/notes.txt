@@ -1,0 +1,21 @@
+L9
+
+Diff b/w Controller annotation and RestController
+Diff b/w component and bean annotations
+
+Generic Annotations
+1. Target 
+2. Retention
+3. Documented
+
+
+RetentionPolicy
+
+1. Source - These will not be present in the byte code
+2. Class - These will be present in the byte code but when your byte code runs in the JVM, these are discarded
+3. Runtime - These annotations are never discarded and are present in the VM / JVM
+
+
+
+Curl - It’s an agent similar to your web browser for hitting an HTTP request
+
