@@ -1,0 +1,23 @@
+L11
+
+DDL - Data definition language (schema related operations) 
+
+CREATE TABLE, CREATE DATABASE, CREATE INDEX
+
+DML - Data Manipulation language i.e Manipulating the data
+UPDATE, INSERT, DELETE
+
+
+
+Execute - Returns true if there’s a result set else false. Should be used only to check whether you have some data in the table or not in select query i.e this should not be used
+
+ExecuteUpdate - Returns the number of rows / records updated or affected. Should be used with non select queries
+
+ExecuteQuery - Returns the actual result set, should be used only with select queries
+
+
+Disadvantages of ad-hoc way as compared to hibernate
+1. it is error prone in conversion from relational table to java object and vice versa
+2. Not scalable in conversion from java to sql table and vice versa
+3. Query written might not be optimized
+
