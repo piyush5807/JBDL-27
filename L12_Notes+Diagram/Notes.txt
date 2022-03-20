@@ -1,0 +1,100 @@
+L12
+
+Spring-boot-starter-data-jpa
+
+|— jakarta.persistence-api —> It’s used to provide sql related config for eg: @Id, 							     @Column, @Table
+
+|— spring-data-jpa —> It provides the contract for db operations which the							hibernate implements for eg: find(), save(), delete() etc.
+
+|— hibernate-core —> It’s the implementation ORM framework for spring-data-jpa. 				      This is the one which internally communicates with the 						      underlying db via network calls and get the stuff done
+
+
+
+				Repository.            (Spring-data-commons)
+                                      |
+				CrudRepository           (spring-data-commons)
+					|
+			PagingAndSortingRepository. (Spring-data-commons)
+					|
+				JpaRepository. (Spring-data-jpa)
+					|
+			Our code using jparepository
+
+
+Spring-boot-starter-data-mongodb
+
+|—  mongodb-driver-sync —> This contains the driver to connect to the underlying 						    mongodb server
+
+|— spring-data-mongodb —> This contains contract for db operations which the querydsl-mongodb implements and executes the queries 
+
+
+
+				Repository.            (Spring-data-commons)
+                                      |
+				CrudRepository           (spring-data-commons)
+					|
+			PagingAndSortingRepository. (Spring-data-commons)
+					|
+				MongoRepository (Spring-data-mongodb)
+					|
+			Our code using mongorepository
+
+
+
+Spring-boot-starter-data-cassandra
+|— spring-data-cassandra —> 
+|— spring-tx —> 
+
+
+
+
+				Repository.            (Spring-data-commons)
+                                      |
+				CrudRepository           (spring-data-commons)
+					|
+			CassandraRepsoitory    (Spring-data-cassandra)
+					|
+			Our code using cassandrarepository
+
+
+
+
+
+				    Repository
+					   |
+				    CrudRepsoitory
+				/.                |	             \
+MongoRepository. CassandraRepository.   JpaRepsoitory ….
+{}  as a document                                                                      
+
+
+
+Save function of cassandra
+
+public <S extends T> S save(S entity) {
+    Assert.notNull(entity, "Entity must not be null");
+    BasicCassandraPersistentEntity<?> persistentEntity = (BasicCassandraPersistentEntity)this.mappingContext.getPersistentEntity(entity.getClass());
+    return persistentEntity != null && persistentEntity.hasVersionProperty() && !this.entityInformation.isNew(entity) ? this.operations.update(entity) : this.operations.insert(entity, INSERT_NULLS).getEntity();
+}
+
+Save function of mongodb
+
+public <S extends T> S save(S entity) {
+    Assert.notNull(entity, "Entity must not be null!");
+    return this.entityInformation.isNew(entity) ? this.mongoOperations.insert(entity, this.entityInformation.getCollectionName()) : this.mongoOperations.save(entity, this.entityInformation.getCollectionName());
+}
+
+Save function of JPA
+
+@Transactional
+public <S extends T> S save(S entity) {
+    Assert.notNull(entity, "Entity must not be null.");
+    if (this.entityInformation.isNew(entity)) {
+        this.em.persist(entity);
+        return entity;
+    } else {
+        return this.em.merge(entity);
+    }
+}
+
+
