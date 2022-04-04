@@ -1,0 +1,66 @@
+Cookie before signing up - 3DC01EADA2770E7BBEA9D285B4A68A24
+
+Curl before signing in
+
+curl 'http://localhost:9090/demo' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'Upgrade-Insecure-Requests: 1' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36' \
+  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'Sec-Fetch-Site: none' \
+  -H 'Sec-Fetch-Mode: navigate' \
+  -H 'Sec-Fetch-User: ?1' \
+  -H 'Sec-Fetch-Dest: document' \
+  -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+  -H 'Cookie: Idea-3b3423d4=68df66bf-6aa3-42e9-8ed2-80984c084313; JSESSIONID=3DC01EADA2770E7BBEA9D285B4A68A24' \
+  --compressed
+
+
+Cookie after signing in -      3789F861B096127B253320CE4C7B11FA
+
+
+Curl after signing in 
+
+curl 'http://localhost:9090/demo' \
+  -H 'Connection: keep-alive' \
+  -H 'Cache-Control: max-age=0' \
+  -H 'Upgrade-Insecure-Requests: 1' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36' \
+  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: navigate' \
+  -H 'Sec-Fetch-User: ?1' \
+  -H 'Sec-Fetch-Dest: document' \
+  -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="99", "Google Chrome";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'Referer: http://localhost:9090/login' \
+  -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+  -H 'Cookie: Idea-3b3423d4=68df66bf-6aa3-42e9-8ed2-80984c084313; JSESSIONID=3789F861B096127B253320CE4C7B11FA' \
+  --compressed
+
+
+———————————————————————————————————————————————————————————————————
+
+
+JSESSION ID before logging in - 7276D66104D67DC694B9E690DC942110
+Password - 9b5b033f-b736-4152-b16b-311665288c9d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
