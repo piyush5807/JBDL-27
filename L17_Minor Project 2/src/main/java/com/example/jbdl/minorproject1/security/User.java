@@ -1,27 +1,23 @@
-package com.example.jbdl.demosecuritydb;
+package com.example.jbdl.minorproject1.security;
 
+import com.example.jbdl.minorproject1.models.Student;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-import org.springframework.data.annotation.Immutable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.stream.Collectors;
+import java.util.Collections;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class MyUser implements UserDetails {
-
-    // DEVOPS,DEVELOPER
-
-    private static final String delimiter = ",";
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,15 +27,40 @@ public class MyUser implements UserDetails {
     private String username;
 
     private String password;
-    private String authorities;
+    private String authority;
+
+    @OneToOne(mappedBy = "user")
+    @JsonIgnoreProperties("user")
+    private Student student;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getAuthority() {
+        return authority;
+    }
+
+    public void setAuthority(String authority) {
+        this.authority = authority;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        String[] authorityList = this.authorities.split(delimiter);
-
-        return Arrays.stream(authorityList)
-                .map(x -> new SimpleGrantedAuthority(x))
-                .collect(Collectors.toList());
+        GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(this.authority);
+        return Collections.singletonList(grantedAuthority);
     }
 
     @Override

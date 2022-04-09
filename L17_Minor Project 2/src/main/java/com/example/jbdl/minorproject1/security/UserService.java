@@ -1,4 +1,4 @@
-package com.example.jbdl.demosecuritydb;
+package com.example.jbdl.minorproject1.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DemoService implements UserDetailsService {
+public class UserService implements UserDetailsService {
 
     @Autowired
     UserRepository userRepository;
@@ -15,6 +15,10 @@ public class DemoService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByUsername(username).get(0);
+        return userRepository.findByUsername(username);
+    }
+
+    public User createUser(User user){
+        return userRepository.save(user);
     }
 }
