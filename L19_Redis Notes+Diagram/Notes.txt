@@ -1,0 +1,29 @@
+Redis Commands
+
+1. keys <pattern> - Used to retrieve all the keys for a particular pattern
+2. SET <key> <value> [Optional fieds]
+3.  ttl <key> —> Time to live for a particular key i.e after how many seconds it will expire 
+    1. -1 —> infinite time i.e it will not expire
+    2. If some positive value —> then the key expire after those many seconds
+    3. -2 —> key has expired
+4. expire <time_in_seconds> —> expires the key after these many seconds
+5. pexpire <time_in_milliseconds> —> expires the key after these many milliseconds
+6. Incr —> increment the number strings / integer by 1
+7. decr —> Decrement the number strings / integer by 1
+
+
+8. Lpush
+9. Rpush
+10. Lpop
+11. Rpop
+12. Lrange
+
+13. Hset
+14. Hmset 
+15. Hgetall
+16. Hget
+17. hdel
+
+
+(error) NOAUTH Authentication required - When password is not provided in the connection string / connection
+
